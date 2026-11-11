@@ -1,6 +1,6 @@
 # Seismic volume (Volve, ST10010)
 
-Family `seismic_volumes` (`src/ingest/segy.py`, `src/processing/seismic_volume.py`, adapter section `seismic_volume`, notebook 43). The archive folder `Seismic` holds one SEG-Y file: the 2011 pre-stack depth migration of the ST10010 survey, final full-angle stack (3-41 degrees), shown in two-way time (`..._KIRCH_FULL_T`). The order summary lists 18 stack data sets (near, mid, far, full angle; time and depth; final and raw); only this one is delivered.
+Family `seismic_volumes` (`segy`, `seismic_volume`, adapter section `seismic_volume`, the analysis notebooks). The archive folder `Seismic` holds one SEG-Y file: the 2011 pre-stack depth migration of the ST10010 survey, final full-angle stack (3-41 degrees), shown in two-way time (`..._KIRCH_FULL_T`). The order summary lists 18 stack data sets (near, mid, far, full angle; time and depth; final and raw); only this one is delivered.
 
 ## What is read
 

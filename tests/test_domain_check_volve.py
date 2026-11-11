@@ -2,7 +2,7 @@
 
 Local only. The Volve stack (Volve Terms and Conditions, based on CC BY 4.0, Equinor
 and partners; credit, never sold) is NOT in the repo: the test reads about 300 traces
-from where the file already is and skips itself if it is not there. Set
+from the file named by the environment variable and skips itself without it. Set
 ``SEISMIC_LIB_VOLVE_SEGY`` to another path if yours differs.
 
 The file ST10010ZC11_PZ_PSDM_KIRCH_FULL_T is PSDM (pre-stack DEPTH migration) output
@@ -22,15 +22,9 @@ import pytest
 
 from ep_seismic.volume import check_axis, make_domain, open_segy
 
-VOLVE = Path(
-    os.environ.get(
-        "SEISMIC_LIB_VOLVE_SEGY",
-        r"C:\appl\Volve\Seismic"
-        r"\ST10010ZC11_PZ_PSDM_KIRCH_FULL_T.MIG_FIN.POST_STACK.3D.JS-017536.segy",
-    )
-)
+VOLVE = Path(os.environ.get("SEISMIC_LIB_VOLVE_SEGY", ""))
 pytestmark = pytest.mark.skipif(
-    not VOLVE.exists(), reason="local Volve stack not found"
+    not os.environ.get("SEISMIC_LIB_VOLVE_SEGY") or not VOLVE.is_file(), reason="set SEISMIC_LIB_VOLVE_SEGY to the local Volve stack (not in the repo)"
 )
 
 TIME = make_domain("time", "amplitude")

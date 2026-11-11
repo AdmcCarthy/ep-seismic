@@ -6,8 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      # the libraries are private: a token with read access to the sibling repositories (repository secret GH_PACKAGES_TOKEN)
-      - run: git config --global url."https://x-access-token:${{ secrets.GH_PACKAGES_TOKEN }}@github.com/".insteadOf "https://github.com/"
       - run: uv sync --all-extras
       - run: uv run pytest
       - run: uv run ruff check .

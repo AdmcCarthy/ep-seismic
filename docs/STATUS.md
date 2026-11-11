@@ -1,6 +1,6 @@
 # Status of ep-seismic
 
-**State.** Cut out of the E&P data engine on the date of the first commit: 5 modules, 2 test files. The engine still holds the original code and remains the source of truth until it switches over to depend on this library.
+**State.** Cut out of the E&P data engine on the date of the first commit: 5 modules, 2 test files. The engine switched over on 2026-11-11: it depends on this library (its old module paths are aliases of the modules here), and this repository is the source of truth.
 
 ## Decisions (Adam, 2026-11-11)
 * Domain libraries, one per topic; this one is `ep-seismic`. Figures belong to their domain.
@@ -18,6 +18,5 @@
 * none: every `src` import was mapped.
 
 ## Next steps
-* Switch the engine to depend on this library (replace its module by a thin import).
 * Add the knowledge identifiers used here to `KNOWLEDGE.md` and export the defaults from the knowledge store.
 * Run `scripts/publication_gate.py` and clear the warnings before publishing.

@@ -22,7 +22,7 @@ wheels = [
 [[package]]
 name = "ep-physics-base"
 version = "0.1.0"
-source = { git = "https://github.com/AdmcCarthy/ep-physics-base?tag=v0.1.0#6cd2fb78ca3a48d591d266f6f61bde5764679683" }
+source = { git = "https://github.com/AdmcCarthy/ep-physics-base#6cd2fb78ca3a48d591d266f6f61bde5764679683" }
 dependencies = [
     { name = "numpy" },
     { name = "pandas" },
@@ -50,7 +50,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ep-physics-base", git = "https://github.com/AdmcCarthy/ep-physics-base?tag=v0.1.0" },
+    { name = "ep-physics-base", git = "https://github.com/AdmcCarthy/ep-physics-base" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pyyaml" },

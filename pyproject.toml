@@ -1,0 +1,42 @@
+[project]
+name = "ep-seismic"
+version = "0.1.0"
+description = "Seismic interpretation: horizons and fault polygons, SEG-Y volume reading by declared byte positions, pick-to-event checks against a baseline, and vertical seis"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "AdmcCarthy", email = "24669992+AdmcCarthy@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "shapely",
+    "pyyaml",
+    "ep-physics-base",
+]
+
+[tool.uv.sources]
+ep-physics-base = { git = "https://github.com/AdmcCarthy/ep-physics-base", tag = "v0.1.0" }
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 200
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501", "E701", "E702", "E731", "E741"]

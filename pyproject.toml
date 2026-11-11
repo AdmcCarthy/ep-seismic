@@ -1,6 +1,6 @@
 [project]
 name = "ep-seismic"
-version = "0.1.0"
+version = "0.2.0"
 description = "Seismic interpretation: horizons and fault polygons, SEG-Y volume reading by declared byte positions, pick-to-event checks against a baseline, and vertical seis"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -14,6 +14,8 @@ dependencies = [
     "scipy",
     "shapely",
     "pyyaml",
+    "matplotlib",
+    "segyio>=1.9.15",
     "ep-physics-base",
 ]
 

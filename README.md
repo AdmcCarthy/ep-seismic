@@ -1,6 +1,6 @@
 # ep-seismic: Horizons, faults and volumes, and whether a pick sits on an event
 
-Seismic interpretation: horizons and fault polygons, SEG-Y volume reading by declared byte positions, pick-to-event checks against a baseline, and vertical seismic profile tables. Volume access in place is the job of `seismic_lib`; the reader here is a small one for checks.
+Seismic interpretation: horizons and fault polygons, SEG-Y volume reading by declared byte positions, pick-to-event checks against a baseline, and vertical seismic profile tables. Volume access in place (index, sections, domain checks, plots; formerly the repository `seismic_lib`) is the subpackage `ep_seismic.volume`, described in `docs/volume_access.md`; the small header reader `ep_seismic.segy` serves the checks.
 
 **Status: private, built public-ready.** The library follows the rules of a public one (no host-repository imports, no data, no private paths, an automated publication gate in `scripts/publication_gate.py`) and is published only when that gate passes. Licence: MIT with acknowledgement (`LICENSE`).
 

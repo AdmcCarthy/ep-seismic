@@ -20,3 +20,7 @@
 ## Next steps
 * Add the knowledge identifiers used here to `KNOWLEDGE.md` and export the defaults from the knowledge store.
 * Run `scripts/publication_gate.py` and clear the warnings before publishing.
+
+## Merge with seismic_lib (2026-11-11)
+* Adam: merge the two. The repository seismic_lib (read-in-place SEG-Y access, compact index, sections, domain checks, plots; segyio) is now the subpackage ep_seismic.volume (version 0.2.0); its tests and the check_domain script came with it. seismic_lib is archived with a pointer.
+* Still two readers: ep_seismic.segy (93 lines, declared byte positions, header facts for the volume checks) and ep_seismic.volume.segy (segyio, index). Porting the checks onto SegySource and retiring ep_seismic.segy needs tests that compare the two on the same files; not done.
